@@ -99,6 +99,7 @@ Create a managed identity for the Azure Kubernetes Service cluster
 Create the NSG, VNet and Subnet which will host the Kubernetes compute resources
 ```shell
 az network nsg create --name $NSG_NAME --resource-group $RG_NAME --location $LOCATION
+az network nsg rule create --nsg-name $NSG_NAME --resource-group $RG_NAME --name "AllowWebTraffic" --priority 100 --direction Inbound --protocol Tcp --destination-port-ranges 80 443
 az network vnet create --name $VNET_NAME --resource-group $RG_NAME  --location $LOCATION --address-prefixes 10.0.0.0/16
 az network vnet subnet create --vnet-name $VNET_NAME --resource-group $RG_NAME --name "AKS-Subnet" --address-prefixes 10.0.0.0/24 --network-security-group $NSG_NAME
 ```
