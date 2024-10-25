@@ -11,3 +11,4 @@ Each session will cover different aspects of AKS, providing valuable insights an
 
 ## Course Links
 - [AKS Cluster Creation Lab](AKS_Cluster_Creation_Lab.md)
+- [AKS Deployment Lab](AKS_Deployment_Lab.md)
